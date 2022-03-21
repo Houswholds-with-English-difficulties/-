@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int j;
+	char a[100];
+	char b[30];
+	int i=0,x=0,y=0,c=0,s=0;
+	printf("输入一个句子:\n");
+	while((a[i]=getchar())!='\n')
+	{
+		x++;
+		i++;
+	}
+	strlwr(a);
+	i=0;
+	rewind(stdin);
+	printf("请输入需查单词:\n");
+    while((b[i] = getchar()) != '\n')
+	{
+        y++;
+        i++;
+	}
+    strlwr(b);
+    for (i = 0; i < x; i++)
+	{   
+	    c = 0;
+        if(a[i] == b[0])
+		{
+            for(j=0;j<y;j++)
+			{
+                if(a[i+j] == b[j])
+				{
+                    c++;
+				}
+			}
+            if(c==y)
+				s++;
+		}
+	}
+    printf("该单词出现次数为%d\n",s);
+	return 0;
+}
