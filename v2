@@ -1,0 +1,24 @@
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+	char strexp[]="2*2/4*1/1*2*3/2";
+	int res=strexp[0]-'0';
+	for(int i=1;i<strlen(strexp);i++)
+	{
+		if(strexp[i]=='*')
+		{
+			int r=strexp[i+1]-'0';
+			res=res*r;
+			i++;
+		}
+		else if(strexp[i]=='/')
+		{
+			int r=strexp[i+1]-'0';
+			res=res/r;
+			i++;
+		}
+	}
+	printf("%d\n",res);
+	return 0;
+}
