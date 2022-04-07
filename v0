@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char strexp[]="3+4";
+	int liftoperand=strexp[0]-'0';
+	int rightoperand=strexp[2]-'0';
+	int res=liftoperand+rightoperand;
+	printf("%d\n",res);
+	return 0;
+}
